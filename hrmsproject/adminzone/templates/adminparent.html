@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Digital HR for ElectroTech </title>
+<style>
+    .outer
+    {
+    height:auto;
+    width:1000px;
+    //border:1px solid white;
+    min-height:1000px;
+    margin:0px auto;
+    }
+    .header
+    {
+    height:150px;
+    width:1000px;
+    border:1px solid;
+    }
+    .logo
+    {
+    width:150px;
+    height:150px;
+    background-color:grey;
+    float:left;
+    }
+    .title
+    {
+    color:white;
+    height:150px;
+    width:850px;
+    line-height:150px;
+    background-color:navy;
+    float:left;
+    font-size:60px;
+    text-align:center;
+    }
+.menu
+{
+height:50px;
+width:1000px;
+background:black;
+border:1px solid white;
+margin-top:3px ;
+}
+.menu ul
+{
+list-style-type:none;
+}
+.menu ul li
+{
+display:inline;
+}
+.menu ul li a
+{
+font-size:20px;
+text-decoration:none;
+padding:28px;
+color:white;
+}
+.menu ul li a:hover
+{
+color:blue;
+}
+.main
+{
+height:auto;
+margin-top:5px;
+width:1000px;
+min-height:700px;
+background-color:white;
+border:1px solid white;
+//background-image:url("static/images/hrms.jpg");
+}
+.footer
+{
+height:85px;
+width:1000px;
+background:blue;
+margin-top:5px;
+}
+.lfooter
+{
+height:85px;
+width:500px;
+background-color:purple;
+float:left;
+color:#14D7CA;
+text-align:center;
+font-size:30px;
+line-height:85px;
+}
+.rfooter
+{
+height:85px;
+width:500px;
+background-color:white;
+float:right;
+color:#14D7CA;
+text-align:center;
+font-size:30px;
+line-height:85px;
+
+}
+</style>
+</head>
+<body bgcolor="green">
+<div class="outer">
+<div class="header">
+    <div class="logo">
+        <img src="{% static 'images/logo.png'%}" height="150px" width="150px;"/>
+
+    </div>
+    <div class="title">welcome to admin zone</div>
+</div>
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'adminzone:adminhome' %}">Admin Home</a></li>
+            <li><a href="{% url 'adminzone:jobseeker' %}">JobSeeker</a></li>
+            <li><a href="{% url 'adminzone:enquiries' %}">Enquiry</a></li>
+            <li><a href="{% url 'adminzone:changepassword' %}">Password</a></li>
+            <li><a href="{% url 'adminzone:logout' %}">logout</a></li>
+
+        </ul>
+    </div>
+    <div class="main">
+    {% block main %}
+
+    {% endblock main %}
+
+    </div>
+    <div class="footer">
+        <div class="lfooter">copyright &copy;to Digital HR</div>
+        <div class="rfooter">Developed By:Adarsh Tiwari</div>
+
+    </div>
+
+</div>
+</body>
+</html>

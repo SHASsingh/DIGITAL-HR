@@ -1,0 +1,49 @@
+{% extends 'adminparent.html' %}
+{% block main %}
+<style>
+    .main
+    {
+    background-image: linear-gradient(to right top, #d7e1f0, #c1dcf1, #a6d7ee, #88d3e6, #6acfd8);
+    }
+</style>
+<h1 style="text-align:center;color:#9A4BDD;">
+    Job Seeker  Management
+</h1>
+<div style="width:100%;margin:0px auto;overflow-x:scroll">
+<table style="width:90%;margin:0px auto" border="1">
+    <tr>
+        <th style="color:#E5F6FC;">ApplicantName</th>
+        <th style="color:#E5F6FC;">gender</th>
+        <th style="color:#E5F6FC;">address</th>
+        <th style="color:#E5F6FC;">city</th>
+        <th style="color:#E5F6FC;">country</th>
+        <th style="color:#E5F6FC;">contactno</th>
+        <th style="color:#E5F6FC;">emailaddress</th>
+        <th style="color:#E5F6FC;">qualification</th>
+        <th style="color:#E5F6FC;">experience</th>
+        <th style="color:#E5F6FC;">Keyskills</th>
+        <th style="color:#E5F6FC;">Dob</th>
+        <th style="color:#E5F6FC;">regdate</th>
+        <th style="color:#E5F6FC;">delete </th>
+    </tr>
+    {% for j in jobs %}
+    <tr>
+        <td style="color:#EEFCFE;">{{j.applicantname}}</td>
+        <td style="color:#EEFCFE">{{j.gender}}</td>
+        <td style="color:#EEFCFE">{{j.address}}</td>
+        <td style="color:#EEFCFE">{{j.city}}</td>
+        <td style="color:#EEFCFE">{{j.country}}</td>
+        <td style="color:#EEFCFE">{{j.contactno}}</td>
+        <td style="color:#EEFCFE">{{j.emailaddress}}</td>
+        <td style="color:#EEFCFE">{{j.qualification}}</td>
+        <td style="color:#EEFCFE">{{j.experience}}</td>
+        <td style="color:#EEFCFE">{{j.keyskills}}</td>
+        <td style="color:#EEFCFE">{{j.dob}}</td>
+        <td style="color:#EEFCFE">{{j.regdate}}</td>
+        <td><a href="{% url 'adminzone:deletejobseekers' emailid=j.emailaddress %}" style="color:#EEFCFE;text-decoration:none">delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+{% endblock main %}

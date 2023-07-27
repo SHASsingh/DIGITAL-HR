@@ -1,0 +1,49 @@
+{% extends 'parent.html'%}
+{% block body %}
+<h1 style="color:white;text-align:center">Enquiry Form</h1>
+<style>
+ .pright
+ {
+ background-image: linear-gradient(to left bottom, #61b0c6, #62a2c3, #6992bc, #7383b0, #7c739f);
+ }
+
+</style>
+<form action="{% url 'saveenquiry' %}" method="post">
+    {% csrf_token %}
+    <table style="margin:0px auto;width:60%">
+        <tr>
+            <td style="font-family:Monospace">Enter Name:</td>
+            <td><input type="text" name="name"   required/></td>
+        </tr>
+        <tr>
+            <td style="font-family:Monospace">Select Gender</td>
+            <td><input type="radio" name="gender" value="male"/>Male
+            <input type="radio" name="gender" value="female">Female
+            </td>
+        </tr>
+        <tr>
+            <td style="font-family:Monospace">Enter Address:</td>
+            <td><textarea name="address" rows="5" cols="30" style="resize:none">
+            </textarea></td>
+        </tr>
+      <tr>
+          <td style="font-family:Monospace">Enter Contact No:</td>
+          <td><input type="number" name="contactno" required/></td>
+      </tr>
+        <tr>
+            <td style="font-family:Monospace">Enter Email :</td>
+            <td><input type="email" name="emailaddress" required/></td>
+        </tr>
+        <tr>
+            <td style="font-family:Monospace">Enter Enquiry text:</td>
+            <td><textarea name="enquirytext" rows="5" cols="30" style="resize:none"></textarea></td>
+        </tr>
+        <tr>
+            <td>&nbsp</td>
+            <td><input type="submit"  value="submit"  id="button"/></td>
+
+        </tr>
+    </table>
+</form>
+
+{%endblock body%}

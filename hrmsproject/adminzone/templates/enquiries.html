@@ -1,0 +1,38 @@
+{% extends 'adminparent.html' %}
+{% block main %}
+<style>
+    .main
+    {
+    background-image: linear-gradient(to right top, #21edd2, #7bedc1, #a7edb9, #c8ecba, #dfebc3);
+    }
+</style>
+<h1 style="text-align:center;color:white;">
+   Manage Enquiries
+</h1>
+<table style="width:100%;margin:0px auto;" border="1">
+    <tr>
+        <th style="color:grey">Id</th>
+        <th style="color:grey">name</th>
+        <th style="color:grey">gender</th>
+        <th style="color:grey">address</th>
+        <th style="color:grey">contactno</th>
+        <th style="color:grey">emailaddress</th>
+        <th style="color:grey">enquirytext</th>
+        <th style="color:grey">enquirydate</th>
+        <th style="color:grey">Delete</th>
+    </tr>
+    {% for e in enq %}
+ <tr>
+     <td style="color:#646766">{{e.id}}</td>
+     <td style="color:#646766">{{e.name}}</td>
+     <td style="color:#646766">{{e.gender}}</td>
+     <td style="color:#646766">{{e.address}}</td>
+     <td style="color:#646766">{{e.contactno}}</td>
+     <td style="color:#646766">{{e.emailaddress}}</td>
+     <td style="color:#646766">{{e.enquirytext}}</td>
+     <td style="color:#646766">{{e.enquirydate}}</td>
+     <td><a href="{% url 'adminzone:deleteenquiries' id=e.id  %}" style="color:#E8F2F1">delete</a></td>
+ </tr>
+     {% endfor %}
+</table>
+{% endblock main %}
